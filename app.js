@@ -90,7 +90,7 @@ app.get('/getMeals', async (req, res) => {
 
     const meals = mealQuerySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-    res.status(200).send({ success: true, meals });
+    res.status(200).send(meals);
   } catch (error) {
     res.status(500).send({ success: false, error: error.message });
   }
